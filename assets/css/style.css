@@ -1,0 +1,21 @@
+h1{
+    font-family: 'Press Start 2P', cursive;
+}
+p{
+    font-family: 'Press Start 2P', cursive;   
+}
+.button {
+    padding: 16px 16px;
+  }
+/* 
+#random-number{
+    //div holds a random number
+
+}
+<div id="game-status"></div>
+<button id="ruby-button"></button>
+<button id="topaz-button"></button>
+<button id="citrine-button"></button>
+<button id="emerald-button"></button>
+<div id="static-text">Your total score is:</div>
+<div id="player-score"></div> */

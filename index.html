@@ -82,12 +82,14 @@
     var randomNumberDiv = $('#random-number').text(randomNumber);
     var sum = 0;
 
+  
+    
 
     $("#ruby-button").on("click", function(){
         //sum = sum + $("#ruby-button").text(randomRubyNumber);
         console.log(randomRubyNumber);
-        sum = sum + randomRubyNumber;
-        $("#current-sum").text(sum);
+         sum = sum + randomRubyNumber;
+         $("#current-sum").text(sum);
         gameStatus(sum);
        
     });
@@ -114,26 +116,15 @@
         sum = sum + randomTopazNumber;
         $("#current-sum").text(sum);
         gameStatus(sum);
-    });
-    function resetGame()
-    {
-        sum = 0;
-        $("#current-sum").text(sum); 
-        var randomRubyNumber = Math.floor((Math.random() * 12) + 1);
-        var randomTopazNumber = Math.floor((Math.random() * 12) + 1);
-        var randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
-        var randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
-        var randomNumber = Math.floor((Math.random() * 120) + 19);
-        var randomNumberDiv = $('#random-number').text(randomNumber);
-         
-    }
+    });    
+    
 
     function gameStatus(sum)
     {
         if (sum === randomNumber)
         {
             var i = 0;
-            i = i + 1;
+            i++;
          $("#win-div").text("Wins: "+i);
          resetGame();
     
@@ -141,11 +132,27 @@
         else if(sum > randomNumber)
         {
             var n = 0;
-            n = n + 1;
+            n++;
           $("#loss-div").text("Losses: "+n);
+          
           resetGame();
 
         }
+    }
+
+    function resetGame()
+    {
+        sum = 0;
+        $("#current-sum").text(sum); 
+        var randomNumber = Math.floor((Math.random() * 120) + 19);
+        $('#random-number').text(randomNumber);
+        var randomRubyNumber = Math.floor((Math.random() * 12) + 1);
+        var randomTopazNumber = Math.floor((Math.random() * 12) + 1);
+        var randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
+        var randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
+        //$("#random-number").reload(true); 
+    
+                 
     }
 
 

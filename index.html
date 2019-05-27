@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Header font-->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Press+Start+2P|Special+Elite&display=swap" rel="stylesheet">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,6 +22,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
 </head>
 <body>
+    <header> <h2> MiaTee Game</h2>  </header>
     <!-- create a header -->
     <div class="container">
             <div class="jumbotron">
@@ -43,22 +46,93 @@
           </div>
     </div>      
    
+    <div class="container">
+            <div class="jumbotron" id="random-number">
+             
+            </div>
     
-    <div id="random-number"></div>
-    <div id="game-status"></div>
-    <button type = "button" id="ruby-button"> <img src = "assets/images/ruby.png"> </button>
-    <button type = "button" id="citrine-button" > <img src = "assets/images/citrine.png"> </button>
-    <button type = "button" id="topaz-button" > <img src = "assets/images/topaz.png"> </button>
-    <button type = "button" id="emerald-button" > <img src = "assets/images/emerald.png"> </button>  
-
-    <div id="static-text" >Your total score is:</div>
-    <div id="player-score"></div>
+    </div>
+    <div class="container" >
+            <div class="jumbotron" id="game-status">
+                <p id = "current-sum"> </p>
+                <p id = "win-div">Wins:</p>
+                <p id = "loss-div">Losses:</p>
+            </div>    
+    </div>
+    <div class="container" >
+            <div class="jumbotron" id ="buttons-div">
+    <button type = "button" value ="value" id="ruby-button"> <img src = "assets/images/ruby.png"> </button>
+    <button type = "button" value ="value" id="citrine-button" > <img src = "assets/images/citrine.png"> </button>
+    <button type = "button" value ="value" id="topaz-button" > <img src = "assets/images/topaz.png"> </button>
+    <button type = "button" value ="value" id="emerald-button" > <img src = "assets/images/emerald.png"> </button>  
+</div> </div>
+<div class="container" >
+        <div class="jumbotron" > <h2 id="static-text" > Your total score is: </h2></div>
+</div>
+<div class="container" >
+        <div class="jumbotron"> <h2 id="player-score"></h2></div>
+    </div>
 
     <script type="text/javascript">
-    var randomNumber = Math.floor((Math.random() * 12) + 1);
-    var randomGemStonesNumbers = Math.floor((Math.random() * 120) + 19);
+    //Defining All needed Variables
+    var randomRubyNumber = Math.floor((Math.random() * 12) + 1);
+    var randomTopazNumber = Math.floor((Math.random() * 12) + 1);
+    var randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
+    var randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
+    var randomNumber = Math.floor((Math.random() * 120) + 19);
     var randomNumberDiv = $('#random-number').text(randomNumber);
-    randomNumberDiv.prepend;
+    var sum = 0;
+
+    // var topazButton = $("#topaz-button");
+    // var emeraldButton = $("#emerald-button");
+    // var citrineButton = $("#citrine-button");
+    $("#ruby-button").on("click", function(){
+        //sum = sum + $("#ruby-button").text(randomRubyNumber);
+        sum = sum + randomRubyNumber;
+        $("#current-sum").text(sum);
+        gameStatus(sum);
+    });
+
+    $("#citrine-button").on("click", function(){
+        //sum = sum + $("#ruby-button").text(randomRubyNumber);
+        sum = sum + randomCitrineNumber;
+        $("#current-sum").text(sum);
+        gameStatus(sum);
+    });
+
+    $("#emerald-button").on("click", function(){
+        //sum = sum + $("#ruby-button").text(randomRubyNumber);
+        sum = sum + randomEmeraldNumber;
+        $("#current-sum").text(sum);
+        gameStatus(sum);
+    });
+
+    $("#topaz-button").on("click", function(){
+        //sum = sum + $("#ruby-button").text(randomRubyNumber);
+        sum = sum + randomTopazNumber;
+        $("#current-sum").text(sum);
+        gameStatus(sum);
+    });
+    function gameStatus(sum)
+    {
+        if (sum === randomNumber)
+        {
+            var i;
+            i=+1;
+         $("#win-div").text(i);
+        }
+        else if(sum > randomNumber)
+        {
+            var n;
+            n=+1;
+          $("#loss-div").text(n);  
+
+        }
+    }
+
+
+
+
 
  
     </script>

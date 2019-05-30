@@ -81,6 +81,8 @@
     var randomNumber = Math.floor((Math.random() * 120) + 19);
     var randomNumberDiv = $('#random-number').text(randomNumber);
     var sum = 0;
+    var i;
+    var n;
 
   
     
@@ -123,15 +125,15 @@
     {
         if (sum === randomNumber)
         {
-            var i = 0;
-            i++;
+            
+         i++;
          $("#win-div").text("Wins: "+i);
          resetGame();
     
         }
         else if(sum > randomNumber)
         {
-            var n = 0;
+           
             n++;
           $("#loss-div").text("Losses: "+n);
           
@@ -144,12 +146,12 @@
     {
         sum = 0;
         $("#current-sum").text(sum); 
-        var randomNumber = Math.floor((Math.random() * 120) + 19);
-        $('#random-number').text(randomNumber);
-        var randomRubyNumber = Math.floor((Math.random() * 12) + 1);
-        var randomTopazNumber = Math.floor((Math.random() * 12) + 1);
-        var randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
-        var randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
+        randomNumber = Math.floor((Math.random() * 120) + 19);
+        randomNumberDiv = $('#random-number').text(randomNumber);
+        randomRubyNumber = Math.floor((Math.random() * 12) + 1);
+        randomTopazNumber = Math.floor((Math.random() * 12) + 1);
+        randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
+        randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
         //$("#random-number").reload(true); 
     
                  

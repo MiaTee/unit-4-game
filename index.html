@@ -81,8 +81,8 @@
     var randomNumber = Math.floor((Math.random() * 120) + 19);
     var randomNumberDiv = $('#random-number').text(randomNumber);
     var sum = 0;
-    var i;
-    var n;
+    var i = 0;
+    var n = 0;
 
   
     
@@ -125,8 +125,8 @@
     {
         if (sum === randomNumber)
         {
-            
          i++;
+         console.log(i);
          $("#win-div").text("Wins: "+i);
          resetGame();
     
@@ -151,16 +151,8 @@
         randomRubyNumber = Math.floor((Math.random() * 12) + 1);
         randomTopazNumber = Math.floor((Math.random() * 12) + 1);
         randomEmeraldNumber = Math.floor((Math.random() * 12) + 1);
-        randomCitrineNumber = Math.floor((Math.random() * 12) + 1);
-        //$("#random-number").reload(true); 
-    
-                 
+        randomCitrineNumber = Math.floor((Math.random() * 12) + 1);       
     }
-
-
-
-
-
  
     </script>
 </body>
